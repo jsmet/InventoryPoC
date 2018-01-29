@@ -1,0 +1,25 @@
+﻿
+<h1>Inventory Module</h1>
+
+<p>Select an icon to view products under that category that you wish to view more items for</p>
+
+<div class="row">
+    <h2 class="col-xs-3" *ngFor="let productType of productTypes">
+        <span (click)="getItems(productType.name)" class="glyphicon {{ productType.icon }}"></span>
+    </h2>
+</div>
+
+<div class="row" *ngIf="(test.length > 1)">Looking at items in {{ test }}</div>
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-xs-2" *ngFor="let item of items">
+        <p>{{item.name}}</p>
+        <p>{{item.description}}</p>
+        <p>{{item.cost}}</p>
+        <p>{{item.quantityOnHand}}</p>
+        <p>{{item.expirationDate}}</p>
+    </div>    
+</div>
